@@ -1,0 +1,22 @@
+body{
+    background: url("https://ld-wp73.template-help.com/wordpress/prod_19731/v2/wp-content/uploads/2018/07/home-slide-bg-1-1.jpg")  no-repeat;
+    /* display: flow-root; */
+    height: 100vh;
+}
+
+.btn-profile{
+    float: right;
+    margin-right: -450px;
+}
+.btn-close-profile{
+    float: right;
+    margin-right: -400px;
+}
+.testClass{
+    height: 800px;
+    text-align: right;
+}
+.watch{
+    display: flex;
+    align-items:flex-end
+}

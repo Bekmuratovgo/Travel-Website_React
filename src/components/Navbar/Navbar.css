@@ -1,0 +1,11 @@
+@media (min-width: 600px){
+    .MuiToolbar-regular {
+        min-height: 64px;
+        /* background: rgba(233, 30, 30, 0.1); */
+        /* background: ; */
+    }
+}
+/* .main-nav{
+    display: grid;
+    grid-template-columns: repeat(8, auto)
+} */
