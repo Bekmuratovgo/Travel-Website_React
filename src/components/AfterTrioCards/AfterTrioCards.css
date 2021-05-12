@@ -1,0 +1,30 @@
+.trio-img{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    grid-auto-rows: auto;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.block-1 img{
+    width: 350px;
+}
+.block-2 img{
+    width: 350px;
+
+}
+.block-3 img{
+    width: 350px;
+}
+@media screen and (max-width: 1200px) {
+    .w-100.trio-img {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+    .block-2 img{
+        margin: 0px !important;
+    }
+  }
+  

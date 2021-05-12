@@ -1,0 +1,79 @@
+.bg-img-just{
+    height: 80vh;
+    background-size: cover; 
+    background-position: 100% 50%; 
+    background-image: url("https://ld-wp73.template-help.com/wordpress/prod_19731/v2/wp-content/uploads/2018/07/bg-home-3.png");
+}
+
+.w-100.bg-img-just{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-gap: 15px;
+    margin-top: 120px;
+}
+.eki-text{
+    color: #292f35;
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    text-transform: none;
+    text-decoration: none;
+    line-height: 1.65em;
+    margin: 0;
+    border-left: 3px solid #292f36;
+    word-spacing: 3px;
+}
+.eki p{
+    padding-left: 40px;
+}
+.bir{
+    color: #292f35;
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.eki{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C4EEEC;
+}
+.after-text{
+    text-align: left;
+    color: #292f35;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    text-decoration: none;
+    line-height: 1.65em;
+    letter-spacing: 0px;
+}
+
+@media screen and (max-width: 992px) {
+    .w-100.bg-img-just {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+    .bir{
+        display: none;
+    }
+    
+  }
+  @media screen and (max-width: 499px) {
+    .eki-text {
+        font-size: 20px;
+    }
+    .after-text{
+        font-size: 15px;
+        word-spacing: 0;
+    }
+    
+}
+@media screen and (max-width: 358px) {
+    .access{
+        padding-top: 220px;
+    }
+}

@@ -29,9 +29,12 @@ const Home = () => {
     function handleUpdateClose(){
         setUpdate(false)
     }
-    return (                                        
-        <div className="testClass">
-        <h1 style={{textAlign:'center',color:'white',fontSize:'80px',fontFamily: 'Raleway, Arial'}}>EASY FLY</h1>
+    return (    
+        <div className="testClass">       
+        <div>
+        <h1  className="easy">EASY FLY</h1><br/>
+        <h1 className="zagolovok">EXPLORING <br/>THE WORLD </h1>
+        </div>
         {upDate ? (
             <div className="update">
             <Card>  
@@ -43,7 +46,7 @@ const Home = () => {
                 </Card.Body>
             </Card>
             <div className="w-100 text-center mt-2">
-                <Button variant="link" onClick={handleLogOut}>Log Out</Button>
+                <Button variant="link" style={{color: 'red'}} onClick={handleLogOut}>Log Out</Button>
             </div>
             </div>
         ) : (
@@ -62,9 +65,15 @@ const Home = () => {
             </div>
             
         )}
-        <Button className="btn-profile" style={{backgroundColor: 'transparent', borderColor: 'none'}} onClick={handleUpdate}><AccountBoxIcon/></Button>
-        <Button className="btn-close-profile" style={{backgroundColor:'transparent',borderColor:'none'}} onClick={handleUpdateClose}>X</Button>
-            <button className="watch">Watch</button>
+        {
+            upDate ? 
+            <Button className="btn-close-profile" style={{backgroundColor:'transparent',borderColor:'transparent'}} onClick={handleUpdateClose}>X</Button>
+            :
+            <Button className="btn-profile" style={{backgroundColor: 'transparent', borderColor: 'transparent'}} onClick={handleUpdate}><AccountBoxIcon/></Button>
+
+        }
+        {/* <Button className="btn-profile" style={{backgroundColor: 'transparent', borderColor: 'transparent'}} onClick={handleUpdate}><AccountBoxIcon/></Button> */}
+            {/* <button className="watch">Watch</button> */}
         </div>
     );
 };

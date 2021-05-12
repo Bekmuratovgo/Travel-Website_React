@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,14 +8,17 @@ import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 
 import './Navbar.css'
+import { Link } from 'react-router-dom';
+import { topicContext } from '../../contexts/TopicContext';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -90,6 +93,23 @@ export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMenu = () => setClick(false);
+  // SEARCH
+  const { search, searchData , cartLength, lengthFavorite} = useContext(topicContext)
+   const [searchValue, setSearchValue] = useState("");
+
+  const handleValue = (e) =>{
+    setSearchValue(e.target.value)
+    search(e.target.value)
+  }
+
+  useEffect(() => {
+    console.log(searchData);
+  }, [searchData]);
+
+
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -112,20 +132,6 @@ export default function PrimarySearchAppBar() {
   };
 
   const menuId = 'primary-search-account-menu';
-//   const renderMenu = (
-//     <Menu
-//       anchorEl={anchorEl}
-//       anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-//       id={menuId}
-//       keepMounted
-//       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-//       open={isMenuOpen}
-//       onClose={handleMenuClose}
-//     >
-//       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-//       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-//     </Menu>
-//   );
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
@@ -168,57 +174,85 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
+
   return (
     <div className={classes.grow} id="main-nav">
+      
       <AppBar position="static" style={{ background: 'transparent', boxShadow: ''}}> 
         <Toolbar>
-          {/* <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton> */}
-          <Typography className={classes.title} variant="h6" noWrap>
-            EasyFly
+          
+          <Typography className={classes.title} variant="h6" >
+            <Link to="/"style={{color: 'White'}}>EasyFly</Link>
           </Typography>
           <div className={classes.search}>
-            <div className={classes.searchIcon}>
+            <div className={classes.searchIcon} >
               <SearchIcon />
             </div>
-            <InputBase
+            <InputBase className="search-item"
               placeholder="Search…"
+              onChange={handleValue}
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
             />
+              <div className="search-result">
+                {searchData.map(item => (
+                  <Link to={`/details/${item.id}`}>
+                    <div>{item.title}</div>
+                  </Link>
+                ))}
+              </div>
+
           </div>
+          
           <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
+          <Link to="/admin" style={{color: 'White',marginRight:'20px'}}>
+            ADMIN
+          </Link>
+          
+          <div className={classes.title} style={{textAlign:'center'}} variant="h6" >
+            <Link to="/contact" style={{color: 'White'}}>
+              CONTACT
+            </Link>
+          </div>
+                  {/* КОРЗИНКА */}
+          <div className={classes.title} style={{textAlign:'center',marginRight:'20px'}} variant="h6" >
+          <IconButton aria-label="show 17 new notifications" color="inherit">
+            <Badge badgeContent={cartLength} color="secondary">
+              <Link to="/basket" style={{color: 'White'}}>
+                  <ShoppingCartIcon />
+              </Link>
+            </Badge>
+          </IconButton>
+          </div>
+
+          {/* ИЗБРАННОЕ */}
+          <div className={classes.title} style={{textAlign:'center',marginRight:'20px'}} variant="h6" >
+          <IconButton aria-label="show 17 new notifications" color="inherit">
+            <Badge badgeContent={lengthFavorite} color="secondary">
+              <Link to="/favorite" style={{color: 'White'}}>
+                  <BookmarkBorderIcon />                  
+              </Link>
+            </Badge>
+          </IconButton>
+          </div>
+          
+          {/* <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
               </Badge>
             </IconButton>
+            
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-            {/* <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton> */}
-          </div>
+            
+          </div> */}
           <div className={classes.sectionMobile}>
             <IconButton
               aria-label="show more"

@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
-    margin-top: 60px;
+    /* margin-top: 60px; */
 }
 .discover{
     color: #737576;
@@ -40,4 +40,94 @@
 .s {
     width: 330px;
     margin-right: 250px;
+}
+@media screen and (max-width: 992px) {
+    .w-100.main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+    .block-2 img{
+        margin: 0px !important;
+    }
+  }
+  @media screen and (max-width: 660px) {
+    .w-100.main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+    .second {
+        display: flex;
+        justify-content: center;
+    }
+    .f{
+        z-index: 2;
+        width: 200px;
+        position: relative;
+        /* top: 900px */
+        margin: 5px;
+    }
+    .s {
+        width: 200px;
+        margin: 5px;
+    }
+  }
+  @media screen and (max-width: 499px) {
+      .explore{
+          font-size: 22px;
+      }
+      .discover{
+          font-size: 12px;
+      }
+      .signature{
+          width: 50px;
+          margin-left: 5px;
+      }
+  }
+  @media screen and (max-width: 433px) {
+    .w-100.main{
+        width: auto;
+    }
+    .second img{
+        width: 100px;
+    }
+    
+}
+@media screen and (max-width: 334px) {
+    .w-100.bg-img-just{
+        display: flex;
+        justify-content: center;
+    }
+    .eki{
+        width: 280px;
+    } 
+    .eki-text{
+        font-size: 10px !important;
+    }
+    .w-100.glavnaya{
+        margin-top: 20px !important;
+        width: 270px !important;
+    }
+    .w-100.trio-img{
+        margin-top: 20px;
+    }
+    .w-100.trio-img img{
+        width: 120px !important;
+    }
+    .block-2 img{
+        display: none;
+    }
+    .b-text{
+        font-size: 11px !important;
+    }
+    .b-text-after{
+        font-size: 11px !important;
+    }
+    .a video{
+        width: 100px ;
+    }
+    .access{
+        padding-top: 0px !important;
+    }
 }

@@ -29,7 +29,7 @@ const ForgotPassword = () => {
     }
     return (
         <>
-            <Card>
+            <Card style={{ maxWidth: '400px' }}>
                 <Card.Body>
                     <h2 className="text-center mb-4">Password Reset</h2>
                     {error && <Alert variant="danger">{error}</Alert>}

@@ -1,0 +1,15 @@
+.cart{
+    background: white;
+    padding: 20px;
+    border-radius: 3px;
+}
+.btn-btn{
+    background-color: rgb(0, 110, 255);
+    color: white;
+    font-family: 'Montserrat';
+    border: none;
+    padding-top: 2px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 3px;
+}
