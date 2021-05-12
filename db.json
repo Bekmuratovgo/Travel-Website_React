@@ -1,0 +1,42 @@
+{
+  "comments": [
+    {
+      "title": "",
+      "description": "sss",
+      "id": 1
+    },
+    {
+      "title": "asa",
+      "description": "",
+      "id": 2
+    }
+  ],
+  "topics": [
+    {
+      "img": "https://ld-wp73.template-help.com/wordpress/prod_19731/v2/wp-content/uploads/2018/02/post-img-1.jpg",
+      "title": "France",
+      "description": "This is beautiful country",
+      "price": "2000",
+      "access": "Available",
+      "id": 5
+    },
+    {
+      "img": "https://ld-wp73.template-help.com/wordpress/prod_19731/v2/wp-content/uploads/2018/02/post-img-1.jpg",
+      "title": "Spain",
+      "description": "This is beautiful country",
+      "price": "3000",
+      "access": "Available",
+      "id": 6
+    },
+    {
+      "title": "asd",
+      "description": "sad",
+      "id": 7
+    },
+    {
+      "title": "Gennadyi",
+      "description": "asd",
+      "id": 8
+    }
+  ]
+}

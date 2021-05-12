@@ -1,0 +1,8 @@
+@media screen and (max-width: 992px) {
+    .list {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
+    }
+    
+  }

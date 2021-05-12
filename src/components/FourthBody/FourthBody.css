@@ -1,0 +1,64 @@
+.w-100.fourth{
+    height: 80vh;
+    margin-top: 120px;
+    background-size: cover; 
+    background-position: 100% 50%; 
+    background-image: url("https://ld-wp73.template-help.com/wordpress/prod_19731/v2/wp-content/uploads/2018/07/bg-home-6.png");
+}
+.w-100.fourth{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-gap: 15px;
+    margin-top: 120px;
+}
+.b-text{
+    color: #292f35;
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    text-transform: none;
+    text-decoration: none;
+    line-height: 1.65em;
+    word-spacing: 3px;
+    border-left: 3px solid #292f36;
+    background: white;
+    padding: 30px;
+}
+.b p{
+    padding-left: 40px;
+}
+.a{
+    color: #292f35;
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.b{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.b-after-text{
+    text-align: left;
+    color: #292f35;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    text-decoration: none;
+    line-height: 1.65em;
+    letter-spacing: 0px;
+}
+@media screen and (max-width: 992px) {
+    .w-100.fourth {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+    .access{
+        padding-top: 180px;
+    }
+    
+  }

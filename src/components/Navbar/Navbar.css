@@ -1,11 +1,33 @@
-@media (min-width: 600px){
-    .MuiToolbar-regular {
-        min-height: 64px;
-        /* background: rgba(233, 30, 30, 0.1); */
-        /* background: ; */
-    }
+
+ .search-result{
+    width: 100%;
+    position: absolute;
+    background-color: white;;
+    z-index: 10;
+ }
+ .search-result div {
+    border-bottom: 1px solid black;
+    margin-bottom: 5px;
 }
-/* .main-nav{
-    display: grid;
-    grid-template-columns: repeat(8, auto)
-} */
+.search-result a {
+    text-decoration: none;
+    color: black;
+}
+ .search-item{
+    position: relative;
+ }
+ .search-result div{
+    border-bottom: 1px solid black;
+    margin-bottom: 5px;
+ }
+ .search-result a{
+    text-decoration: none;
+    color: black;
+ }
+
+
+ @media screen and (max-width: 1200px) {
+   #main-nav {
+       width: 100%;
+   }
+ }
