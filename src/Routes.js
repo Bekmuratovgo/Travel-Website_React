@@ -10,7 +10,6 @@ import UpdateProfile from './components/UpdateProfile/UpdateProfile';
 import Navbar from './components/Navbar/Navbar'
 import MainPage from './components/MainPage/MainPage';
 import About from './components/About/About';
-import AddTopic from './components/AddTopic/AddTopic';
 import Admin from './components/Admin/Admin';
 import TopicDetails from './components/TopicDetails/TopicDetails';
 import Basket from './components/Basket/Basket';
@@ -32,8 +31,8 @@ const Routes = () => {
                         <PrivateRoute exact path="/admin" component={Admin}/>
                         <PrivateRoute path="/update-profile" component={UpdateProfile}/>
                         <PrivateRoute exact path="/details/:id" component={TopicDetails} />
-
                         <PrivateRoute exact path="/" component={MainPage}/>
+
                         <Route exact path="/about" component={About}/>
                         <Route exact path="/basket" component={Basket}/>
                         <Route exact path="/favorite" component={Favorite} />
