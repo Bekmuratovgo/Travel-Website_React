@@ -29,7 +29,7 @@ const reducer = (state=INIT_STATE, action) =>{
                 ...state,
                 topicsData: action.payload.data,
                 paginationPages: Math.ceil(
-                    action.payload.headers["x-total-count"] / 5
+                    action.payload.headers["x-total-count"] / 4
                 ),
             };
         case 'GET_TOPIC_DETAILS':
